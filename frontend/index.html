@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple CRUD App</title>
+    <title>BookList Manager</title>
+    <!-- AngularJS Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/bookController.js"></script>
+    <script src="js/services/bookService.js"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="BookController">
@@ -38,6 +44,7 @@
                 </tr>
             </tbody>
         </table>
+        <br><br>
 
         <!-- Edit Form -->
         <form ng-show="editMode" ng-submit="updateBook()">
@@ -47,11 +54,6 @@
         </form>
     </div>
 
-    <!-- AngularJS Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers/bookController.js"></script>
-    <script src="js/services/bookService.js"></script>
 
 </body>
 </html>

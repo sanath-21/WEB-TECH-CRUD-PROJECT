@@ -2,19 +2,19 @@ app.factory('BookService', function($http) {
     var service = {};
 
     service.getBooks = function() {
-        return $http.get('http://localhost:5000/books');  // Updated URL
+        return $http.get('http://localhost:5000/books'); 
     };
 
     service.addBook = function(book) {
-        return $http.post('http://localhost:5000/books', book);  // Updated URL
+        return $http.post('http://localhost:5000/books', book);  
     };
 
     service.updateBook = function(id, book) {
-        return $http.put('http://localhost:5000/books/' + id, book);  // Updated URL
+        return $http.put('http://localhost:5000/books/' + id, book);  
     };
 
     service.deleteBook = function(id) {
-        return $http.delete('http://localhost:5000/books/' + id);  // Updated URL
+        return $http.delete('http://localhost:5000/books/' + id);  
     };
 
     return service;
