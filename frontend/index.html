@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bookApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CRUD App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="BookController">
+
+    <div class="container">
+        <h1>Add Details</h1>
+        
+        <!-- Form for Adding New Book -->
+        <form ng-submit="addBook()">
+            <input type="text" ng-model="newBook.title" placeholder="Enter Book Title" required>
+            <input type="text" ng-model="newBook.author" placeholder="Enter Book Author" required>
+            <button type="submit">Add Book</button>
+        </form>
+
+        <!-- Table for Displaying Books -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th class="action">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in books">
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>
+                        <button class="edit" ng-click="editBook(book)">Edit</button>
+                        <button class="delete" ng-click="deleteBook(book.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Edit Form -->
+        <form ng-show="editMode" ng-submit="updateBook()">
+            <input type="text" ng-model="currentBook.title" required>
+            <input type="text" ng-model="currentBook.author" required>
+            <button type="submit">Update Book</button>
+        </form>
+    </div>
+
+    <!-- AngularJS Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/bookController.js"></script>
+    <script src="js/services/bookService.js"></script>
+
+</body>
+</html>
